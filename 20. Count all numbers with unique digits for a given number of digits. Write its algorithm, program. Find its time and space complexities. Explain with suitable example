@@ -1,0 +1,19 @@
+public class UniqueDigitsCount {
+    public static void main(String[] args) {
+        int n = 2;
+        System.out.println("Count: " + countNumbersWithUniqueDigits(n));
+    }
+    
+    public static int countNumbersWithUniqueDigits(int n) {
+        if (n == 0) return 1;
+        int ans = 10, uniqueDigits = 9, availableDigits = 9;
+        
+        while (n-- > 1 && availableDigits > 0) {
+            uniqueDigits *= availableDigits;
+            ans += uniqueDigits;
+            availableDigits--;
+        }
+        
+        return ans;
+    }
+}
