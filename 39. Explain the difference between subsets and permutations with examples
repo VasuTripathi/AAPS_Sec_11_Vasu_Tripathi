@@ -1,0 +1,12 @@
+Explanation:
+
+Subsets: All possible selections (order doesn’t matter).
+
+Permutations: All possible arrangements (order matters).
+
+Example:
+For {1,2}
+
+Subsets → {}, {1}, {2}, {1,2}
+
+Permutations → 1-2, 2-1
