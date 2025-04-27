@@ -1,0 +1,16 @@
+Bit Manipulation means operating at the level of individual bits using:
+
+AND (&), OR (|), XOR (^), NOT (~), Shift (<<, >>)
+
+Very fast, low-level operations.
+
+Useful for optimization, number theory, encryption.
+
+Example:
+
+java
+Copy code
+int a = 5; // 101
+int b = 3; // 011
+System.out.println(a & b); // Output: 1 (001)
+System.out.println(a | b); // Output: 7 (111)
