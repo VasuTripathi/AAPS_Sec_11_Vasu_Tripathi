@@ -1,0 +1,5 @@
+Linked List = Nodes connected with next pointers.
+
+Types: singly, doubly, circular linked list.
+
+Used in dynamic memory allocation, queues, stacks, etc.
