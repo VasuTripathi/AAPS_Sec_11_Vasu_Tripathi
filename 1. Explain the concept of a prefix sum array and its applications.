@@ -1,0 +1,34 @@
+A prefix sum array is an array where each element at index i is the sum of all elements from the beginning till index i of the original array.
+
+Suppose the array is: [2, 4, 6, 8]
+
+Prefix sum array will be: [2, 6, 12, 20]
+
+2
+
+2+4=6
+
+2+4+6=12
+
+2+4+6+8=20
+Applications:
+
+Quickly finding the sum of elements between two indices.
+
+Range queries.
+
+Dynamic programming problems.
+
+Finding subarray sums.
+
+ Algorithm:
+
+Create an array prefix[] of the same size.
+
+Set prefix[0] = arr[0].
+
+For each i from 1 to n-1:
+prefix[i] = prefix[i-1] + arr[i].
+
+ Time Complexity: O(n)
+ Space Complexity: O(n)
