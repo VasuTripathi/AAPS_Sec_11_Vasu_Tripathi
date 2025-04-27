@@ -1,0 +1,48 @@
+import java.util.PriorityQueue;
+
+public class KthSmallestInMatrix {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 5, 9},
+            {10, 11, 13},
+            {12, 13, 15}
+        };
+        int k = 8;
+        
+        int result = kthSmallest(matrix, k);
+        System.out.println(k + "-th smallest element is: " + result);
+    }
+    
+    static class Node {
+        int val, row, col;
+        Node(int val, int row, int col) {
+            this.val = val;
+            this.row = row;
+            this.col = col;
+        }
+    }
+    
+    public static int kthSmallest(int[][] matrix, int k) {
+        int n = matrix.length;
+        PriorityQueue<Node> pq = new PriorityQueue<>((a, b) -> a.val - b.val);
+        
+        // Insert first element of each row
+        for (int i = 0; i < n; i++) {
+            pq.offer(new Node(matrix[i][0], i, 0));
+        }
+        
+        int count = 0;
+        while (!pq.isEmpty()) {
+            Node curr = pq.poll();
+            count++;
+            if (count == k) {
+                return curr.val;
+            }
+            if (curr.col + 1 < n) {
+                pq.offer(new Node(matrix[curr.row][curr.col + 1], curr.row, curr.col + 1));
+            }
+        }
+        
+        return -1;
+    }
+}
