@@ -1,0 +1,7 @@
+Dynamic Programming (DP) solves problems by breaking into subproblems and saving results.
+
+In Kadane’s Algorithm, at each index:
+
+Either extend previous subarray or start a new one.
+
+Avoids recomputation and optimizes performance.
