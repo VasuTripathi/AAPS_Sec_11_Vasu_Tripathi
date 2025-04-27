@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class PrefixSumRangeQuery {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Input array
+        int[] arr = {2, 4, 6, 8, 10};
+        int n = arr.length;
+        
+        // Build prefix sum array
+        int[] prefix = new int[n];
+        prefix[0] = arr[0];
+        for (int i = 1; i < n; i++) {
+            prefix[i] = prefix[i - 1] + arr[i];
+        }
+        
+        // Input L and R
+        System.out.println("Enter L and R:");
+        int L = sc.nextInt();
+        int R = sc.nextInt();
+        
+        // Find sum
+        int sum;
+        if (L == 0)
+            sum = prefix[R];
+        else
+            sum = prefix[R] - prefix[L - 1];
+        
+        System.out.println("Sum from index " + L + " to " + R + " is: " + sum);
+        
+        sc.close();
+    }
+}
