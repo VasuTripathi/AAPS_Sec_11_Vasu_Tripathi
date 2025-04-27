@@ -1,0 +1,22 @@
+public class SplitArrayEqualSum {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 3};
+        int n = arr.length;
+        
+        int totalSum = 0;
+        for (int num : arr) {
+            totalSum += num;
+        }
+        
+        int prefixSum = 0;
+        for (int i = 0; i < n; i++) {
+            prefixSum += arr[i];
+            if (prefixSum * 2 == totalSum) {
+                System.out.println("Array can be split after index " + i);
+                return;
+            }
+        }
+        
+        System.out.println("Cannot split array into two equal parts");
+    }
+}
