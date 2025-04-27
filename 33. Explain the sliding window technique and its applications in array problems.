@@ -1,0 +1,6 @@
+
+Process subarrays without recomputing.
+
+Save time (from O(n²) to O(n)).
+
+Applications: fixed size window, max sum, min length subarray.
