@@ -1,22 +1,21 @@
-public class SplitArrayEqualSum {
+public class MaxSumSubarraySizeK {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 3};
+        int[] arr = {2, 1, 5, 1, 3, 2};
+        int k = 3;
         int n = arr.length;
         
-        int totalSum = 0;
-        for (int num : arr) {
-            totalSum += num;
+        int windowSum = 0;
+        for (int i = 0; i < k; i++) {
+            windowSum += arr[i];
         }
         
-        int prefixSum = 0;
-        for (int i = 0; i < n; i++) {
-            prefixSum += arr[i];
-            if (prefixSum * 2 == totalSum) {
-                System.out.println("Array can be split after index " + i);
-                return;
-            }
+        int maxSum = windowSum;
+        
+        for (int i = k; i < n; i++) {
+            windowSum += arr[i] - arr[i - k];
+            maxSum = Math.max(maxSum, windowSum);
         }
         
-        System.out.println("Cannot split array into two equal parts");
+        System.out.println("Maximum Sum of subarray of size " + k + ": " + maxSum);
     }
 }
