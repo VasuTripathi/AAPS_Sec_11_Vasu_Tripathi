@@ -1,0 +1,16 @@
+Explanation:
+Sliding window is a way to reduce nested loops to a single loop by maintaining a moving subset (window) of elements.
+
+ Use Cases:
+
+Finding maximum/minimum subarrays
+
+Longest substring problems
+
+Fixed-size or variable-size window problems
+
+ Benefits:
+
+Faster algorithms (O(n))
+
+Less memory usage
