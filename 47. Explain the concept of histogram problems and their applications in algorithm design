@@ -1,0 +1,22 @@
+A histogram problem deals with bars of different heights.
+
+You are usually asked to find:
+
+The largest rectangle in the histogram.
+
+Water trapped between bars (rainwater trapping).
+
+Applications:
+
+Area calculations.
+
+Data visualization.
+
+Stock span problems.
+
+Skyline problems.
+
+Algorithm Used: Stack for optimizing rectangle finding to O(n).
+
+Example:
+Finding largest rectangle in {2, 1, 5, 6, 2, 3} → output = 10.
